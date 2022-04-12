@@ -1,8 +1,7 @@
 {
   "profiles": {
     "ConvertFiles": {
-      "commandName": "Project",
-      "commandLineArgs": "c:\\Projectos\\CloudCommerceGroup\\DeveloperTechnicalTest\\Examples\\Example1.csv JSON myfile"
+      "commandName": "Project"
     }
   }
 }

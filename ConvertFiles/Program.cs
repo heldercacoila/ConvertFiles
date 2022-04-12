@@ -38,7 +38,7 @@ namespace ConvertFiles
                 if (ProcessConversion(myMenu.OriginalFile, myMenu.CompleteDestinationFilename, myMenu.DestinationType))
                 {
                     OpenDestination(myMenu.CompleteDestinationFilename);
-                    Console.WriteLine("Conversion  completed");
+                    Console.WriteLine("Conversion completed");
                 }
                 myMenu.OriginalFile = myMenu.DestinationFilename = string.Empty;
                 myMenu.DestinationType = EnumFileType.NONE;
@@ -80,7 +80,8 @@ namespace ConvertFiles
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Error reading file. Error message: " + ex.Message);
+                Console.WriteLine("Error reading file.");
+                Console.WriteLine("Error message: " + ex.Message);
             }
             
             if(file != null)
@@ -110,7 +111,8 @@ namespace ConvertFiles
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Error writing file. Error message: " + ex.Message);
+                        Console.WriteLine("Error writing file.");
+                        Console.WriteLine("Error message: " + ex.Message);
                         return result;
                     }
                 }

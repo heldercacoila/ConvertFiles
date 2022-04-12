@@ -21,6 +21,9 @@ namespace ConvertFiles
             }
         }
 
+        /// <summary>
+        /// ReadOnly property to know if the object has all the parameters (OriginalFile,DestinationFilename,DestinationType) filled.
+        /// </summary>
         public bool IsComplete
         {
             get
@@ -28,6 +31,11 @@ namespace ConvertFiles
                 return !string.IsNullOrEmpty(OriginalFile) && !string.IsNullOrEmpty(DestinationFilename) && DestinationType != EnumFileType.NONE;
             }
         }
+
+        /// <summary>
+        /// Default constructor that keep all properties with default values
+        /// </summary>
+        public Menu() { }
 
         /// <summary>
         /// The object can be created with some values already defined
@@ -89,9 +97,9 @@ namespace ConvertFiles
         }
 
         /// <summary>
-        /// This Method shows a menu to get the file path of the file to convert
+        /// This Method shows a menu to get the file path of the file to convert or the destination filename
         /// </summary>
-        /// <returns>Path of file to convert</returns>
+        /// <returns>Path of file to convert or filename</returns>
         private string PathMenu(bool destination)
         {
             string filename = string.Empty;
@@ -118,7 +126,7 @@ namespace ConvertFiles
                             filename = str;
                             exit = true;
                         }
-                        else
+                        else 
                         {
                             Console.WriteLine("File exist, do you want to override? (Y)es, (N)o.");
                             string yesOrNo = Console.ReadLine();
@@ -129,7 +137,7 @@ namespace ConvertFiles
                                 yesOrNo = Console.ReadLine();
                             }
 
-                            if (yesOrNo.ToLower() == "y")
+                            if (yesOrNo.ToLower() == "y") //If Yes then set the filename, if No then doesn't set nothing to return to previous question
                             {
                                 filename = str;
                                 exit = true;

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace ConvertFiles
 {
@@ -11,9 +12,10 @@ namespace ConvertFiles
             {
                 fileData = File.ReadAllText(path);
             }
-            catch
+            catch(Exception ex)
             {
-                //Some exception treatment could be applied here
+                //Some exception treatment or log could be applied here
+                throw ex;
             }
 
             return fileData;
